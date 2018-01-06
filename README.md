@@ -1,28 +1,25 @@
 # Dotfiles
 
-## Overview
+This is a part of [my](https://github.com/dirkr) dotfiles configuration.
+This repo contains the parts needed for desktop workplaces.
 
-This repo is a skeleton/template repo for tracking dotfiles.  It contains
-a utility ([dfm](https://github.com/justone/dfm)) to help with managing and
-updating your dotfiles.
+See the [original dotfiles repo](https://github.com/dirkr/dotfiles) for
+vim/tmux/zsh configuration.
+
+This repo is based on the [dfm](https://github.com/justone/dfm) utility to help
+with managing and updating my dotfiles.
 
 ## Using this repo
 
-First, fork this repo.
+This repo depends on my [dotfiles repo](https://github.com/dirkr/dotfiles):
 
-Then, add your dotfiles:
+    $ git clone git@github.com:dirkr/dotfiles ~/.dotfiles
+    $ ~/.dotfiles/bin/dfm install
 
-    $ git clone git@github.com:username/dotfiles.git .dotfiles
-    $ cd .dotfiles
-    $  # edit files
-    $  # edit files
-    $ git push origin master
+Finally, to install these dotfiles:
 
-Finally, to install your dotfiles onto a new system:
-
-    $ cd $HOME
-    $ git clone git@github.com:username/dotfiles.git .dotfiles
-    $ ./.dotfiles/bin/dfm install # creates symlinks to install files
+    $ git clone git@github.com:dirkr/dotfiles_desktop ~/.dotfiles_desktop
+    $ ~/.dotfiles_desktop/bin/dfm install
 
 ## Full documentation
 
