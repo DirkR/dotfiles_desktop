@@ -29,14 +29,16 @@ do
   fi
 done
 
-echo "exec i3-sensible-terminal -name term -title term"
+term1="i3-sensible-terminal -name term -title term"
+term2="$term1"
+term3="$term1"
 mutt=$(which mutt)
-dir="horizontal"
 if [ $? -eq 0 -a -e "$mutt" ] ; then
-  echo "exec --no-startup-id i3-msg split $dir ; exec i3-sensible-terminal -name mail -title mail -e $mutt ; exec --no-startup-id i3-msg split vertical"
-  dir="vertical"
+  term2="i3-sensible-terminal -name mail -title mail -e mutt"
 fi
 irssi=$(which irssi)
 if [ $? -eq 0 -a -e "$irssi" ] ; then
-  echo "exec --no-startup-id i3-msg split $dir ; exec i3-sensible-terminal -name chat -title chat -e $irssi ; exec --no-startup-id i3-msg split vertical"
+  term3="i3-sensible-terminal -name chat -title chat -e irssi"
 fi
+
+echo "exec --no-startup-id i3-msg 'workspace 1; exec $term1; layout toggle split; layout splitv; split vertical; exec $term2; exec $term3'"
