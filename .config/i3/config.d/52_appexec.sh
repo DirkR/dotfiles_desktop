@@ -31,14 +31,8 @@ done
 
 term1="i3-sensible-terminal -name term -title term"
 term2="$term1"
-term3="$term1"
 mutt=$(which mutt)
 if [ $? -eq 0 -a -e "$mutt" ] ; then
   term2="i3-sensible-terminal -name mail -title mail -e mutt"
 fi
-irssi=$(which irssi)
-if [ $? -eq 0 -a -e "$irssi" ] ; then
-  term3="i3-sensible-terminal -name chat -title chat -e irssi"
-fi
-
-echo "exec --no-startup-id i3-msg 'workspace 1; exec $term1; layout toggle split; layout splitv; split vertical; exec $term2; exec $term3'"
+echo "exec --no-startup-id i3-msg 'workspace 1; layout splith; exec $term1; exec $term2;"
